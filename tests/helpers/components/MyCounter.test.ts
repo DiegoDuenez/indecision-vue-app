@@ -29,4 +29,18 @@ describe("<MyCounter />", () => {
 
     });
 
+    test('increments counter when +1 button is clicked', async () => {
+
+        const wrapper = mount(MyCounter, {
+            props: {
+                value: 5
+            }
+        });
+
+        const btnIncrement = wrapper.find('button');
+
+        await btnIncrement.trigger('click');
+
+    })
+
 });
